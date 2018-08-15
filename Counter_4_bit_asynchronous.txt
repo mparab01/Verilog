@@ -1,0 +1,38 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    08:41:37 08/03/2018 
+// Design Name: 
+// Module Name:    counter_4_bit_wth_asynchronous_rst 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module counter_4_bit_wth_asynchronous_rst(clk, clr, q);
+input clk, rst;
+output signed [3:0]q;
+reg [3:0] temp;
+
+always@(posedge clk or clr)
+	begin
+		if (clr)
+			temp <= 4'b0000;
+		else
+			temp <= temp + 1'b1;
+		end
+	end
+
+	assign q = temp;
+
+
+endmodule

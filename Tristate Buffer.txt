@@ -1,0 +1,32 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    08:04:33 08/03/2018 
+// Design Name: 
+// Module Name:    tristate_buffer 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module tristate_buffer(T,In,Out);
+input In,T;
+output Out;
+always @ (In or T)
+	begin
+		if (~T)
+			Out = 1'bz;
+		else
+			Out = I;
+		end
+	end
+endmodule

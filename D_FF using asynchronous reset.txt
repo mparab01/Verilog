@@ -1,0 +1,36 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    06:28:05 08/03/2018 
+// Design Name: 
+// Module Name:    d_ff_wth_asynch_rst 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module d_ff_wth_asynch_rst(d,q,clk,rst);
+input d,clk,rst;
+output q;
+reg q;
+
+always @ (posedge clk or negedge rst)
+	begin
+		if (rst==0)
+			q <= 1'b0;
+		else
+			q <= d;
+		end
+	end
+
+
+endmodule

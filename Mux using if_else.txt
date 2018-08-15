@@ -1,0 +1,33 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    05:01:05 08/03/2018 
+// Design Name: 
+// Module Name:    mux 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module mux(A,B,SEL,OUT);
+input A,B,SEL;
+output OUT;
+reg OUT;
+
+always @ (A or B or SEL)
+	begin 
+		if (SEL==1'b0) 
+			OUT = A;
+		else
+			OUT =B;
+		end
+endmodule
